@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Game</title>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <style>
+        *{
+    top: 0%;
+    margin: 0%;
+}
+.navbar{
+    font-family: sans-serif;
+    background-color: rgb(173, 255, 47);
+    color: white;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 15px;
+   
+}
+.container{
+    /* background-color: lightgray; */
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.container > button{
+    color: white;
+    background-color: rgb(39, 170, 39);
+    width: 20%;
+    margin-top: 30%;
+    margin-left: 40%;
+    font-size: 24px;
+    padding: 40px;
+    border-radius: 15px;
+    border: none;    
+    /* display: none;  */
+}
+.score{
+
+    color: blue;
+    /* display: none; */
+    padding-top: 40px;
+    padding-left: 20px;
+    display: none;
+
+}
+.whole{
+    display: none;
+}
+
+.questions{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns:50% 50%;
+}
+.question1{
+    background-color:  rgb(39, 170, 39);;
+    color: white;
+    width: 40%;
+    font-size: 24px;
+    padding: 40px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.question1 > h2{
+    color:lightgray;
+}
+.question1 > p{
+    padding: 10px;
+    font-size: 28px;
+}
+.question1 > button{
+    border-radius: 15px;
+    padding:20px 20px;
+    font-size: 20px;
+    border: none;
+    margin-bottom: 10px;
+}
+    </style>  
+</head>
+<body>
+    <div class="navbar">
+        <h1>JsWord</h1>
+    </div>
+    <div class="container">
+        
+         <button onclick="startbtn(event)">Start</button>
+        </div>
+        <div class="score"> 
+            <h1 >Welcome to JsWord...</h1>
+   </div>
+   <div class="whole">
+   <div class="questions">
+        <div class="question1">
+            <h2>Question: 1</h2><hr>
+            <p>Who is Nisha Hasband?</p>
+            <button  onclick="wrongans(event)">Mani</button>
+            <button  onclick="wrongans(event)">Dinesh</button>
+            <button id="ans" onclick="correctans(event)">Sandeep</button>
+        </div>
+        <div class="question1">
+            <h2>Question: 2</h2><hr>
+            <p>Who is Tharkuri?</p>
+            <button onclick="wrongans(event)">Inba</button>
+            <button onclick="correctans(event)">Kodi</button>
+            <button onclick="wrongans(event)">Shanmugam</button>
+        </div>
+        <div class="question1">
+            <h2>Question: 3</h2><hr>
+            <p>Who is expect in services?</p>
+            <button onclick="wrongans(event)">Siva</button>
+            <button onclick="wrongans(event)">Kodi</button>
+            <button onclick="correctans(event)">Shanmugam</button>
+        </div>
+        <div class="question1">
+            <h2>Question: 4</h2><hr>
+            <p>Who is Gaaji No 1?</p>
+            <button onclick="wrongans(event)">Mani</button>
+            <button onclick="wrongans(event)">Dinesh</button>
+            <button onclick="correctans(event)">Sanjay</button>
+        </div>
+        <div class="question1">
+            <h2>Question: 5</h2><hr>
+            <p>Who is Expect in doing shot?</p>
+            <button onclick="wrongans(event)">Sandeep</button>
+            <button onclick="correctans(event)">Kodi</button>
+            <button onclick="correctans(event)">Sanjay</button>
+        </div>
+        <div class="question1">
+            <h2>Question: 6</h2><hr>
+            <p>Who is Always speaking in cricket?</p>
+            <button onclick="wrongans(event)">Sandeep</button>
+            <button onclick="correctans(event)">Siva</button>
+            <button onclick="wrongans(event)">Inba</button>
+        </div>
+        <div class="question1">
+            <h2>Question: 7</h2><hr>
+            <p>Who is always prepare plan?</p>
+            <button onclick="wrongans(event)">Inba</button>
+            <button onclick="wrongans(event)">Dinesh</button>
+            <button onclick="correctans(event)">Mani</button>
+        </div>
+        <div class="question1">
+            <h2>Question: 8</h2><hr>
+            <p>Who is vanavil?</p>
+            <button onclick="wrongans(event)">Sandeep</button>
+            <button onclick="wrongans(event)">Siva</button>
+            <button onclick="correctans(event)">Shanmugam</button>
+        </div>
+
+        <div class="question1">
+            <h2>Question: 9</h2><hr>
+            <p>who is always deline plan?</p>
+            <button onclick="wrongans(event)">Sandeep</button>
+            <button onclick="wrongans(event)">Mani</button>
+            <button onclick="correctans(event)">Dinesh</button>
+        </div>
+        <div class="question1">
+            <h2>Question: 10</h2><hr>
+            <p>Yaru Ponnuga Kitta Romba Valiva?</p>
+            <button onclick="wrongans(event)">Abi</button>
+            <button onclick="wrongans(event)">Mani</button>
+            <button onclick="correctans(event)">Ncc abi</button>
+        </div>
+   </div>
+</div>
+  
+   <script>
+    var score=document.querySelector(".score")
+var questions=document.querySelector(".whole")
+function startbtn(event){
+    event.target.style.display="none"
+    score.style.display="block"
+    questions.style.display="block"
+}
+
+function wrongans(event){
+    event.target.style.backgroundColor="red"
+}
+
+function correctans(event){
+    event.target.style.backgroundColor="yellow"
+    alert("Your Correct Answer..")
+    
+}
+   </script>
+
+
+    <!-- <script src="./script.js"></script> -->
+</body>
+</html>
